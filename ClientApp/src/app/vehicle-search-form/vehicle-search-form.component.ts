@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { Vehicle } from '../vehicle';
 import { VehicleService } from '../vehicle.service';
-import {NgForm} from '@angular/forms'
+import { NgForm } from '@angular/forms'
+
 
 @Component({
   selector: 'app-vehicle-search-form',
@@ -107,13 +108,6 @@ constructor(private vehicleService: VehicleService) {
 
     this.submitted = true;
     this.filteredVehicles = this.vehicles;
-   // this.filteredVehicles = this.vehicles.filter(
-   //   (vehicle) =>
-     //   vehicle.mileage <= (vehicleForm.value.mileage == '--All--' ? 100000 : vehicleForm.value.mileage)
-      //  && vehicle.year <= (vehicleForm.value.year == '--All--' ? 2021 : vehicleForm.value.year)
-       // && vehicle.make == (vehicleForm.value.make == '--All--' ? 2021 : vehicleForm.value.make)
-       // && vehicle.color == vehicleForm.value.color
-   // );
 
     if (vehicleForm.value.make != this.defaultAllValue) {
       this.filteredVehicles = this.filteredVehicles.filter(

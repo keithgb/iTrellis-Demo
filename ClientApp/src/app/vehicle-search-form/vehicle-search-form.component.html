@@ -2,7 +2,6 @@
 <h1 id="tableLabel">Vehicles</h1>
 
 <p *ngIf="!vehicles"><em>Loading...</em></p>
-
 <!--<input type="text" [(ngModel)]="searchTerm" name="searchTerm" placeholder="Search">-->
 <div class="container">
   <div>
@@ -87,7 +86,7 @@
 </div>
 
 <div [hidden]="!submitted">
-  <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="vehicles">
+  <!--<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="vehicles">
     <thead>
       <tr>
         <th [style.display]="'none'">ID</th>
@@ -122,5 +121,61 @@
         <td>{{ vehicle.heatedSeats | booleanLabel }}</td>
       </tr>
     </tbody>
-  </table>
-</div>
+  </table>-->
+  <!--<mat-card class="card" *ngFor="let vehicle of filteredVehicles">
+    <mat-card-header>
+      <div mat-card-avatar class="header-image"></div>
+      <mat-card-title>{{vehicle.make}}</mat-card-title>
+      <mat-card-subtitle>{{vehicle.year}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content class="cardContent">
+      <div class="carImage">
+        <img src="https://picsum.photos/seed/picsum/150" alt="Suppose to be a car image" title="{{ vehicle._id}}" />
+      </div>
+      <div class="features">
+        <h6>Features</h6>
+        <div class="feature_pnl1">
+          <p><mat-checkbox disabled [(ngModel)]="vehicle.sunRoof"> Sun Roof</mat-checkbox></p>
+          <p><mat-checkbox disabled [(ngModel)]="vehicle.fourWheelDrive">4WD</mat-checkbox></p>
+          <p><mat-checkbox disabled [(ngModel)]="vehicle.lowMiles">Low Miles</mat-checkbox></p>
+        </div>
+        <div  class="feature_pnl2">
+          <p><mat-checkbox disabled [(ngModel)]="vehicle.powerWindows">Power Windows</mat-checkbox></p>
+          <p><mat-checkbox disabled [(ngModel)]="vehicle.navigation">Navigation</mat-checkbox></p>
+          <p><mat-checkbox disabled [(ngModel)]="vehicle.heatedSeats">Heated Seats</mat-checkbox></p>
+        </div>
+      </div>
+  <div>{{ vehicle._id }}</div>
+  </mat-card-content>
+  </mat-card>-->
+    <mat-grid-list cols="3" gutterSize="5px" rowHeight="315px">
+      <mat-grid-tile *ngFor="let vehicle of filteredVehicles">
+        <mat-card class="card">
+          <mat-card-header>
+            <div mat-card-avatar class="header-image"></div>
+            <mat-card-title>{{vehicle.make}}</mat-card-title>
+            <mat-card-subtitle>{{vehicle.year}}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content class="cardContent">
+            <div class="carImage">
+              <img src="https://picsum.photos/seed/picsum/150" alt="Suppose to be a car image" title="{{ vehicle._id}}" />
+            </div>
+            <div class="features">
+              <h6>Features</h6>
+              <div class="feature_pnl1">
+                <p><mat-checkbox disabled [(ngModel)]="vehicle.sunRoof"> Sun Roof</mat-checkbox></p>
+                <p><mat-checkbox disabled [(ngModel)]="vehicle.fourWheelDrive">4WD</mat-checkbox></p>
+                <p><mat-checkbox disabled [(ngModel)]="vehicle.lowMiles">Low Miles</mat-checkbox></p>
+              </div>
+              <div class="feature_pnl2">
+                <p><mat-checkbox disabled [(ngModel)]="vehicle.powerWindows">Power Windows</mat-checkbox></p>
+                <p><mat-checkbox disabled [(ngModel)]="vehicle.navigation">Navigation</mat-checkbox></p>
+                <p><mat-checkbox disabled [(ngModel)]="vehicle.heatedSeats">Heated Seats</mat-checkbox></p>
+              </div>
+            </div>
+            <div>{{ vehicle._id }}</div>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+ </div>
