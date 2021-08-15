@@ -29,25 +29,25 @@ export class VehicleSearchFormComponent implements OnInit {
   submitted = false;
 
   private _model = new Vehicle(this.defaultAllValue, this.defaultAllValue, this.defaultAllValue, this.defaultAllValue);
-    public get model() {
-        return this._model;
-    }
-    public set model(value) {
-        this._model = value;
-    }
+  public get model() {
+    return this._model;
+  }
+  public set model(value) {
+    this._model = value;
+  }
 
-  
+
   //searchTerm: string ="";
 
-constructor(private vehicleService: VehicleService) {
-  
-  this.model.sunRoof = this.defaultAllValue;
-  this.model.fourWheelDrive = this.defaultAllValue;
-  this.model.lowMiles = this.defaultAllValue;
-  this.model.powerWindows = this.defaultAllValue;
-  this.model.navigation = this.defaultAllValue;
-  this.model.heatedSeats = this.defaultAllValue;
-}
+  constructor(private vehicleService: VehicleService) {
+
+    this.model.sunRoof = this.defaultAllValue;
+    this.model.fourWheelDrive = this.defaultAllValue;
+    this.model.lowMiles = this.defaultAllValue;
+    this.model.powerWindows = this.defaultAllValue;
+    this.model.navigation = this.defaultAllValue;
+    this.model.heatedSeats = this.defaultAllValue;
+  }
 
   ngOnInit() {
     this.getVehicles();
@@ -79,8 +79,8 @@ constructor(private vehicleService: VehicleService) {
         this.heatedSeatsOptions.unshift(this.defaultAllValue);
         this.powerWindowOptions = Array.from(['Yes', 'No']);
         this.powerWindowOptions.unshift(this.defaultAllValue);
-        
-        
+
+
       });
 
   }

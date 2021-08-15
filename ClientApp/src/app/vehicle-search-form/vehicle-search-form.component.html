@@ -12,6 +12,12 @@
           <option *ngFor="let yearitem of yearOptions" [value]="yearitem">{{yearitem}}</option>
         </select>
       </div>
+      <!--<mat-form-field appearance="fill">
+  <mat-label>Year</mat-label>
+  <mat-select>
+    <mat-option *ngFor="let yearitem of yearOptions" [value]="yearitem">{{yearitem}}</mat-option>
+  </mat-select>
+</mat-form-field>-->
       <div class="form-group">
         <label for="make">Make</label>
         <select class="form-control" id="make" name="make" [(ngModel)]="model.make" required>
@@ -67,19 +73,19 @@
         </select>
       </div>
       <!--<div class="form-group">
-    <label for="sunroof">Sun Roof</label>
-    <input type="checkbox" id="sunroof" name="sunroof" [(ngModel)]="model.sunRoof" (ngModelChange)="onNgModelChange($event)">
-    <label for="fourwheeldrive">Four Wheel Drive</label>
-    <input type="checkbox" id="fourwheeldrive" name="fourwheeldrive" [(ngModel)]="model.fourWheelDrive">
-    <label for="lowmiles">Low Miles</label>
-    <input type="checkbox" id="lowmiles" name="lowmiles" [(ngModel)]="model.lowMiles">
-    <label for="powerw">Power Windows</label>
-    <input type="checkbox" id="powerw" name="powerw" [(ngModel)]="model.powerWindows">
-    <label for="navi">Navigation</label>
-    <input type="checkbox" id="navi" name="navi" [(ngModel)]="model.navigation">
-    <label for="hseats">Heated Seats</label>
-    <input type="checkbox" id="hseats" name="hseats" [(ngModel)]="model.heatedSeats">
-  </div>-->
+        <label for="sunroof">Sun Roof</label>
+        <input type="checkbox" id="sunroof" name="sunroof" [(ngModel)]="model.sunRoof" (ngModelChange)="onNgModelChange($event)">
+        <label for="fourwheeldrive">Four Wheel Drive</label>
+        <input type="checkbox" id="fourwheeldrive" name="fourwheeldrive" [(ngModel)]="model.fourWheelDrive">
+        <label for="lowmiles">Low Miles</label>
+        <input type="checkbox" id="lowmiles" name="lowmiles" [(ngModel)]="model.lowMiles">
+        <label for="powerw">Power Windows</label>
+        <input type="checkbox" id="powerw" name="powerw" [(ngModel)]="model.powerWindows">
+        <label for="navi">Navigation</label>
+        <input type="checkbox" id="navi" name="navi" [(ngModel)]="model.navigation">
+        <label for="hseats">Heated Seats</label>
+        <input type="checkbox" id="hseats" name="hseats" [(ngModel)]="model.heatedSeats">
+      </div>-->
       <button type="submit" class="btn btn-success">Submit</button>
     </form>
   </div>
@@ -122,60 +128,34 @@
       </tr>
     </tbody>
   </table>-->
-  <!--<mat-card class="card" *ngFor="let vehicle of filteredVehicles">
-    <mat-card-header>
-      <div mat-card-avatar class="header-image"></div>
-      <mat-card-title>{{vehicle.make}}</mat-card-title>
-      <mat-card-subtitle>{{vehicle.year}}</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content class="cardContent">
-      <div class="carImage">
-        <img src="https://picsum.photos/seed/picsum/150" alt="Suppose to be a car image" title="{{ vehicle._id}}" />
-      </div>
-      <div class="features">
-        <h6>Features</h6>
-        <div class="feature_pnl1">
-          <p><mat-checkbox disabled [(ngModel)]="vehicle.sunRoof"> Sun Roof</mat-checkbox></p>
-          <p><mat-checkbox disabled [(ngModel)]="vehicle.fourWheelDrive">4WD</mat-checkbox></p>
-          <p><mat-checkbox disabled [(ngModel)]="vehicle.lowMiles">Low Miles</mat-checkbox></p>
-        </div>
-        <div  class="feature_pnl2">
-          <p><mat-checkbox disabled [(ngModel)]="vehicle.powerWindows">Power Windows</mat-checkbox></p>
-          <p><mat-checkbox disabled [(ngModel)]="vehicle.navigation">Navigation</mat-checkbox></p>
-          <p><mat-checkbox disabled [(ngModel)]="vehicle.heatedSeats">Heated Seats</mat-checkbox></p>
-        </div>
-      </div>
-  <div>{{ vehicle._id }}</div>
-  </mat-card-content>
-  </mat-card>-->
-    <mat-grid-list cols="3" gutterSize="5px" rowHeight="315px">
-      <mat-grid-tile *ngFor="let vehicle of filteredVehicles">
-        <mat-card class="card">
-          <mat-card-header>
-            <div mat-card-avatar class="header-image"></div>
-            <mat-card-title>{{vehicle.make}}</mat-card-title>
-            <mat-card-subtitle>{{vehicle.year}}</mat-card-subtitle>
-          </mat-card-header>
-          <mat-card-content class="cardContent">
-            <div class="carImage">
-              <img src="https://picsum.photos/seed/picsum/150" alt="Suppose to be a car image" title="{{ vehicle._id}}" />
+  <mat-grid-list cols="3" gutterSize="5px" rowHeight="315px">
+    <mat-grid-tile *ngFor="let vehicle of filteredVehicles">
+      <mat-card class="card">
+        <mat-card-header>
+          <div mat-card-avatar class="header-image"></div>
+          <mat-card-title>{{vehicle.make}}</mat-card-title>
+          <mat-card-subtitle>{{vehicle.year}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content class="cardContent">
+          <div class="carImage">
+            <img src="https://picsum.photos/seed/picsum/150" alt="Suppose to be a car image" title="{{ vehicle._id}}" />
+          </div>
+          <div class="features">
+            <h6>Features</h6>
+            <div class="feature_pnl1">
+              <p><mat-checkbox disabled [(ngModel)]="vehicle.sunRoof"> Sun Roof</mat-checkbox></p>
+              <p><mat-checkbox disabled [(ngModel)]="vehicle.fourWheelDrive">4WD</mat-checkbox></p>
+              <p><mat-checkbox disabled [(ngModel)]="vehicle.lowMiles">Low Miles</mat-checkbox></p>
             </div>
-            <div class="features">
-              <h6>Features</h6>
-              <div class="feature_pnl1">
-                <p><mat-checkbox disabled [(ngModel)]="vehicle.sunRoof"> Sun Roof</mat-checkbox></p>
-                <p><mat-checkbox disabled [(ngModel)]="vehicle.fourWheelDrive">4WD</mat-checkbox></p>
-                <p><mat-checkbox disabled [(ngModel)]="vehicle.lowMiles">Low Miles</mat-checkbox></p>
-              </div>
-              <div class="feature_pnl2">
-                <p><mat-checkbox disabled [(ngModel)]="vehicle.powerWindows">Power Windows</mat-checkbox></p>
-                <p><mat-checkbox disabled [(ngModel)]="vehicle.navigation">Navigation</mat-checkbox></p>
-                <p><mat-checkbox disabled [(ngModel)]="vehicle.heatedSeats">Heated Seats</mat-checkbox></p>
-              </div>
+            <div class="feature_pnl2">
+              <p><mat-checkbox disabled [(ngModel)]="vehicle.powerWindows">Power Windows</mat-checkbox></p>
+              <p><mat-checkbox disabled [(ngModel)]="vehicle.navigation">Navigation</mat-checkbox></p>
+              <p><mat-checkbox disabled [(ngModel)]="vehicle.heatedSeats">Heated Seats</mat-checkbox></p>
             </div>
-            <div>{{ vehicle._id }}</div>
-          </mat-card-content>
-        </mat-card>
-      </mat-grid-tile>
-    </mat-grid-list>
- </div>
+          </div>
+          <div>{{ vehicle._id }}</div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

@@ -17,6 +17,8 @@ import { BooleanLabelPipe } from './boolean-label.pipe';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatSelectModule } from '@angular/material/select';
+
 
 @NgModule({
   declarations: [
@@ -46,6 +48,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatCardModule,
     MatCheckboxModule,
     MatGridListModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
