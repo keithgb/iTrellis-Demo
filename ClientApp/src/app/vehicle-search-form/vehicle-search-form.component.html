@@ -6,92 +6,95 @@
 <div class="container">
   <div>
     <form (ngSubmit)="onSubmit(vehicleForm)" #vehicleForm="ngForm">
-      <div class="form-group">
-        <label for="year">Year</label>
-        <select class="form-control" id="year" name="year" [(ngModel)]="model.year" required>
-          <option *ngFor="let yearitem of yearOptions" [value]="yearitem">{{yearitem}}</option>
-        </select>
+      <div class="selections">
+        <div>
+          <mat-form-field appearance="fill">
+            <mat-label>Year</mat-label>
+            <mat-select id="year" name="year" [(ngModel)]="model.year">
+              <mat-option *ngFor="let yearitem of yearOptions" [value]="yearitem">{{yearitem}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field appearance="fill">
+            <mat-label>Make</mat-label>
+            <mat-select id="make" name="make" [(ngModel)]="model.make">
+              <mat-option *ngFor="let makeitem of makeOptions" [value]="makeitem">{{makeitem}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field appearance="fill">
+            <mat-label>Color</mat-label>
+            <mat-select id="color" name="color" [(ngModel)]="model.color">
+              <mat-option *ngFor="let coloritem of colorOptions" [value]="coloritem">{{coloritem}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field appearance="fill">
+            <mat-label>Mileage</mat-label>
+            <mat-select id="mileage" name="mileage" [(ngModel)]="model.mileage">
+              <mat-option *ngFor="let mileageitem of mileageOptions" [value]="mileageitem">{{mileageitem}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field appearance="fill">
+            <mat-label>Sun Roof</mat-label>
+            <mat-select id="sunroof" name="sunroof" [(ngModel)]="model.sunRoof">
+              <mat-option *ngFor="let sunroofitem of sunRoofOptions" [value]="sunroofitem">{{sunroofitem}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field appearance="fill">
+            <mat-label>Four Wheel Drive</mat-label>
+            <mat-select id="fwd" name="fwd" [(ngModel)]="model.fourWheelDrive">
+              <mat-option *ngFor="let fwditem of fWDOptions" [value]="fwditem">{{fwditem}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field appearance="fill">
+            <mat-label>Low Miles</mat-label>
+            <mat-select id="lowmiles" name="lowmiles" [(ngModel)]="model.lowMiles">
+              <mat-option *ngFor="let lowmilesitem of lowMilesOptions" [value]="lowmilesitem">{{lowmilesitem}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field appearance="fill">
+            <mat-label>Power Windows</mat-label>
+            <mat-select id="pwindows" name="pwindows" [(ngModel)]="model.powerWindows">
+              <mat-option *ngFor="let pwinditem of powerWindowOptions" [value]="pwinditem">{{pwinditem}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field appearance="fill">
+            <mat-label>Navigation</mat-label>
+            <mat-select id="navigation" name="navigation" [(ngModel)]="model.navigation">
+              <mat-option *ngFor="let navitem of navigationOptions" [value]="navitem">{{navitem}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field appearance="fill">
+            <mat-label>Heated Seats</mat-label>
+            <mat-select id="seats" name="seats" [(ngModel)]="model.heatedSeats">
+              <mat-option *ngFor="let seatitem of heatedSeatsOptions" [value]="seatitem">{{seatitem}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <button type="submit" class="btn btn-success">Find your Vehicle</button>
+        <!--<button type="reset" class="btn btn-success" (click)='onReset()'>Reset</button>-->
       </div>
-      <!--<mat-form-field appearance="fill">
-  <mat-label>Year</mat-label>
-  <mat-select>
-    <mat-option *ngFor="let yearitem of yearOptions" [value]="yearitem">{{yearitem}}</mat-option>
-  </mat-select>
-</mat-form-field>-->
-      <div class="form-group">
-        <label for="make">Make</label>
-        <select class="form-control" id="make" name="make" [(ngModel)]="model.make" required>
-          <option *ngFor="let makeitem of makeOptions" [value]="makeitem">{{makeitem}}</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="color">Color</label>
-        <select class="form-control" id="color" name="color" [(ngModel)]="model.color" required>
-          <option *ngFor="let coloritem of colorOptions" [value]="coloritem">{{coloritem}}</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="mileage">Mileage</label>
-        <select class="form-control" id="mileage" name="mileage" [(ngModel)]="model.mileage" required>
-          <option *ngFor="let mileageitem of mileageOptions" [value]="mileageitem">{{mileageitem}}</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="sunroof">Sun Roof</label>
-        <select class="form-control" id="sunroof" name="sunroof" [(ngModel)]="model.sunRoof" required>
-          <option *ngFor="let sunroofitem of sunRoofOptions" [value]="sunroofitem" [selected]="sunroofitem.name == '--All--'">{{sunroofitem}}</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="fwd">Four Wheel Drive</label>
-        <select class="form-control" id="fwd" name="fwd" [(ngModel)]="model.fourWheelDrive" required>
-          <option *ngFor="let fwditem of fWDOptions" [value]="fwditem" [selected]="fwditem.name == '--All--'">{{fwditem}}</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="lowmiles">Low Miles</label>
-        <select class="form-control" id="lowmiles" name="lowmiles" [(ngModel)]="model.lowMiles" required>
-          <option *ngFor="let lowmilesitem of lowMilesOptions" [value]="lowmilesitem" [selected]="lowmilesitem.name == '--All--'">{{lowmilesitem}}</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="pwindows">Power Windows</label>
-        <select class="form-control" id="pwindows" name="pwindows" [(ngModel)]="model.powerWindows" required>
-          <option *ngFor="let pwinditem of powerWindowOptions" [value]="pwinditem" [selected]="pwinditem.name == '--All--'">{{pwinditem}}</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="navigation">Navigation</label>
-        <select class="form-control" id="navigation" name="navigation" [(ngModel)]="model.navigation" required>
-          <option *ngFor="let navitem of navigationOptions" [value]="navitem" [selected]="navitem.name == '--All--'">{{navitem}}</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="seats">Heated Seats</label>
-        <select class="form-control" id="seats" name="seats" [(ngModel)]="model.heatedSeats" required>
-          <option *ngFor="let seatitem of heatedSeatsOptions" [value]="seatitem" [selected]="seatitem.name == '--All--'">{{seatitem}}</option>
-        </select>
-      </div>
-      <!--<div class="form-group">
-        <label for="sunroof">Sun Roof</label>
-        <input type="checkbox" id="sunroof" name="sunroof" [(ngModel)]="model.sunRoof" (ngModelChange)="onNgModelChange($event)">
-        <label for="fourwheeldrive">Four Wheel Drive</label>
-        <input type="checkbox" id="fourwheeldrive" name="fourwheeldrive" [(ngModel)]="model.fourWheelDrive">
-        <label for="lowmiles">Low Miles</label>
-        <input type="checkbox" id="lowmiles" name="lowmiles" [(ngModel)]="model.lowMiles">
-        <label for="powerw">Power Windows</label>
-        <input type="checkbox" id="powerw" name="powerw" [(ngModel)]="model.powerWindows">
-        <label for="navi">Navigation</label>
-        <input type="checkbox" id="navi" name="navi" [(ngModel)]="model.navigation">
-        <label for="hseats">Heated Seats</label>
-        <input type="checkbox" id="hseats" name="hseats" [(ngModel)]="model.heatedSeats">
-      </div>-->
-      <button type="submit" class="btn btn-success">Submit</button>
     </form>
   </div>
 </div>
 
-<div [hidden]="!submitted">
+<div [hidden]="!submitted" class="results">
   <!--<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="vehicles">
     <thead>
       <tr>
@@ -128,7 +131,7 @@
       </tr>
     </tbody>
   </table>-->
-  <mat-grid-list cols="3" gutterSize="5px" rowHeight="315px">
+  <mat-grid-list cols="4" rowHeight="315px">
     <mat-grid-tile *ngFor="let vehicle of filteredVehicles">
       <mat-card class="card">
         <mat-card-header>
@@ -153,7 +156,7 @@
               <p><mat-checkbox disabled [(ngModel)]="vehicle.heatedSeats">Heated Seats</mat-checkbox></p>
             </div>
           </div>
-          <div>{{ vehicle._id }}</div>
+          <div class="cardMileage">Mileage: {{ vehicle.mileage }}</div>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>

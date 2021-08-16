@@ -179,4 +179,9 @@ export class VehicleSearchFormComponent implements OnInit {
     }
   }
 
+  //onReset(vehicleForm: NgForm) {
+  //  vehicleForm.reset();
+  //  this.model.year = this.defaultAllValue;
+  //}
+
 }

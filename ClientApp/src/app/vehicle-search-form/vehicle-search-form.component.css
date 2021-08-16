@@ -3,7 +3,7 @@
 }
 
 .card {
-  width: 415px;
+  width: 420px;
 }
 
 .cardContent {
@@ -45,4 +45,21 @@
 
 .features-checkbox {
   color: rgba(0,0,0,.87);
+}
+
+.cardMileage{
+   /* font-weight:bold;*/
+   font-size: 16px;
+}
+
+.selections {
+  display: grid;
+  grid-template-columns: repeat(5, .25fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.results {
+
+    margin-top: 5px;
+
 }
