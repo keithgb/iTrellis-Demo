@@ -59,7 +59,7 @@ export class VehicleSearchFormComponent implements OnInit {
     this.vehicleService.getVehicles()
       .subscribe(vehicles => {
         this.vehicles = vehicles;
-        this.yearOptions = this.getYearOptions(1886);
+        this.yearOptions = this.getYearOptions(1886).sort((a, b) => 0 - (a > b ? 1 : -1));
         this.yearOptions.unshift(this.defaultAllValue);
         this.makeOptions = Array.from(new Set(vehicles.map(({ make }) => make))).sort(); //TODO: Get full range of dates
         this.makeOptions.unshift(this.defaultAllValue);
