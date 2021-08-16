@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { Vehicle } from '../vehicle';
 import { VehicleService } from '../vehicle.service';
-import {NgForm} from '@angular/forms'
+import { NgForm } from '@angular/forms'
+
 
 @Component({
   selector: 'app-vehicle-search-form',
@@ -28,25 +29,25 @@ export class VehicleSearchFormComponent implements OnInit {
   submitted = false;
 
   private _model = new Vehicle(this.defaultAllValue, this.defaultAllValue, this.defaultAllValue, this.defaultAllValue);
-    public get model() {
-        return this._model;
-    }
-    public set model(value) {
-        this._model = value;
-    }
+  public get model() {
+    return this._model;
+  }
+  public set model(value) {
+    this._model = value;
+  }
 
-  
+
   //searchTerm: string ="";
 
-constructor(private vehicleService: VehicleService) {
-  
-  this.model.sunRoof = this.defaultAllValue;
-  this.model.fourWheelDrive = this.defaultAllValue;
-  this.model.lowMiles = this.defaultAllValue;
-  this.model.powerWindows = this.defaultAllValue;
-  this.model.navigation = this.defaultAllValue;
-  this.model.heatedSeats = this.defaultAllValue;
-}
+  constructor(private vehicleService: VehicleService) {
+
+    this.model.sunRoof = this.defaultAllValue;
+    this.model.fourWheelDrive = this.defaultAllValue;
+    this.model.lowMiles = this.defaultAllValue;
+    this.model.powerWindows = this.defaultAllValue;
+    this.model.navigation = this.defaultAllValue;
+    this.model.heatedSeats = this.defaultAllValue;
+  }
 
   ngOnInit() {
     this.getVehicles();
@@ -78,8 +79,8 @@ constructor(private vehicleService: VehicleService) {
         this.heatedSeatsOptions.unshift(this.defaultAllValue);
         this.powerWindowOptions = Array.from(['Yes', 'No']);
         this.powerWindowOptions.unshift(this.defaultAllValue);
-        
-        
+
+
       });
 
   }
@@ -107,13 +108,6 @@ constructor(private vehicleService: VehicleService) {
 
     this.submitted = true;
     this.filteredVehicles = this.vehicles;
-   // this.filteredVehicles = this.vehicles.filter(
-   //   (vehicle) =>
-     //   vehicle.mileage <= (vehicleForm.value.mileage == '--All--' ? 100000 : vehicleForm.value.mileage)
-      //  && vehicle.year <= (vehicleForm.value.year == '--All--' ? 2021 : vehicleForm.value.year)
-       // && vehicle.make == (vehicleForm.value.make == '--All--' ? 2021 : vehicleForm.value.make)
-       // && vehicle.color == vehicleForm.value.color
-   // );
 
     if (vehicleForm.value.make != this.defaultAllValue) {
       this.filteredVehicles = this.filteredVehicles.filter(
@@ -184,5 +178,10 @@ constructor(private vehicleService: VehicleService) {
 
     }
   }
+
+  //onReset(vehicleForm: NgForm) {
+  //  vehicleForm.reset();
+  //  this.model.year = this.defaultAllValue;
+  //}
 
 }
