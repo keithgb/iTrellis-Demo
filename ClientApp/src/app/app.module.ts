@@ -9,7 +9,6 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { VehicledataComponent } from './vehicledata/vehicledata.component';
-import { FetchVehicleDataComponent } from './fetch-vehicle-data/fetch-vehicle-data.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { VehicleSearchFormComponent } from './vehicle-search-form/vehicle-search-form.component';
 import { SortPipe } from './sort.pipe';
@@ -28,7 +27,6 @@ import { MatSelectModule } from '@angular/material/select';
     CounterComponent,
     FetchDataComponent,
     VehicledataComponent,
-    FetchVehicleDataComponent,
     VehicleSearchFormComponent,
     SortPipe,
     BooleanLabelPipe
@@ -42,7 +40,6 @@ import { MatSelectModule } from '@angular/material/select';
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'vehicledata', component: VehicledataComponent },
-      { path: 'fetch-vehicle-data', component: FetchVehicleDataComponent },
     ]),
     BrowserAnimationsModule,
     MatCardModule,
