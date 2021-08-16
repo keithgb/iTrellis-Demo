@@ -13,6 +13,7 @@
     <RootNamespace>iTrellis_Demo</RootNamespace>
     <UserSecretsId>1664d0a3-9ac6-45b5-a241-c17776ea1040</UserSecretsId>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <StartupObject>iTrellis_Demo.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
